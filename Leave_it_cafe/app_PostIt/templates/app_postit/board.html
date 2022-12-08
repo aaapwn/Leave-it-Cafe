@@ -3,9 +3,14 @@
 {% block title %}Board | {% endblock %}
 
 {% block content %}
-    <h1>board</h1>
+<h1>board</h1>
+<div><a href="{% url 'writepost' %}">Writepost</a></div>
+<a href="{% url 'cafe' %}">Café</a>
+<a href="{% url 'home' %}">Home</a>
     {% for post in all_post %}
-        <p><a href="{% url 'postit' post.id %}">To : {{ post.to }}</a></p>
+        <p>From : {{ post.from_someone }}</p>
+        <p><a href="{% url 'postit' post.id %}">To : {{ post.to_someone }}</a></p>
+        <p>--------------------</p>
     {% endfor %}
 {% endblock %}
 

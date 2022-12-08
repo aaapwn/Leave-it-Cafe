@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_home.apps.AppHomeConfig',
     'app_PostIt.apps.AppPostitConfig',
+    'app_cafe.apps.AppCafeConfig',
 ]
 
 MIDDLEWARE = [
