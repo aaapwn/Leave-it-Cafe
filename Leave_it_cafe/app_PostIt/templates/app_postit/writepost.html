@@ -8,14 +8,17 @@
         <div style="margin-bottom: 16px;">
             {{ form.from_someone.label_tag }}
             {{ form.from_someone }}
+            {{ form.from_someone.errors }}
         </div>
         <div style="margin-bottom: 16px;">
             {{ form.to_someone.label_tag }}
             {{ form.to_someone }}
+            {{ form.to_someone.errors }}
         </div>
         <div style="margin-bottom: 16px;">
             {{ form.message.label_tag }}
             {{ form.message }}
+            {{ form.message.errors }}
         </div>
         <div>
             <button type="submit">SEND!!!</button>

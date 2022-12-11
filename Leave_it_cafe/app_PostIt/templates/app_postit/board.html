@@ -8,9 +8,28 @@
 <a href="{% url 'cafe' %}">Café</a>
 <a href="{% url 'home' %}">Home</a>
     {% for post in all_post %}
-        <p>From : {{ post.from_someone }}</p>
-        <p><a href="{% url 'postit' post.id %}">To : {{ post.to_someone }}</a></p>
-        <p>--------------------</p>
+    <p>--------------------</p>
+    <div><a href="{% url 'postit' post.id %}">
+        {% if post.from_someone %}
+            <p>From : {{ post.from_someone }}</p>
+        {% endif %}
+        
+        {% if post.to_someone %}
+            <p>To : {{ post.to_someone }}</p>
+        {% endif %}
+
+        {% if not post.from_someone and not post.to_someone %}
+            <p>message : {{ post.message }}</p>
+        {% endif %}
+
+        {% if post.from_someone and not post.to_someone %}
+            <p>message : {{ post.message }}</p>
+        {% endif %}
+
+        {% if not post.from_someone and post.to_someone %}
+            <p>message : {{ post.message }}</p>
+        {% endif %}
+    </a></div>
     {% endfor %}
 {% endblock %}
 

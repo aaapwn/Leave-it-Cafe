@@ -20,14 +20,8 @@ def postit(request, post_id):
 def writepost(request):
     if request.method == "POST":
         post = write_your_post(request.POST)
-        print(post)
         if post.is_valid:
-            data = post.cleaned_data
-            new_post = Post()
-            new_post.from_someone = data['from_someone']
-            new_post.to_someone = data['to_someone']
-            new_post.message = data['message']
-            new_post.save()
+            post.save()
         return HttpResponseRedirect(reverse('board'))
     form = write_your_post
     return render(request, 'app_postit/writepost.html', context={'form':form})
