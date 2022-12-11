@@ -3,7 +3,7 @@ from .models import Message
 # Register your models here.
 
 class Messageadmin(admin.ModelAdmin):
-    list_display = ['user', 'date', 'text']
-    search_fields = ['user', 'text']
+    list_display = ['displayname', 'date', 'text']
+    search_fields = ['displayname', 'text']
 
 admin.site.register(Message, Messageadmin)

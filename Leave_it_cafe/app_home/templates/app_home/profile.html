@@ -1,0 +1,33 @@
+{% extends 'app_home/components/template.html' %}
+{% load static %}
+
+{% block title %}Profile | {% endblock %}
+
+{% block content %}
+    <h3>profile</h3>
+    <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
+    <div>
+        <img src="{% static 'app_home/image/profile_image.jfif' %}" style="max-width: 200px;">
+    </div>
+    {% if flash_message %}
+        <p style="color: rgb(25, 206, 25);">{{ flash_message }}</p>
+    {% endif %}
+    <form action="{% url 'profile' %}" method="post">
+        {% csrf_token %}
+        <div style="margin-bottom: 16px;">
+            {{ extend.displayname.label_tag }}
+            {{ extend.displayname }}
+            {{ extend.displayname.errors }}
+        </div>
+        <div style="margin-bottom: 16px;">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+        <div>
+            <button type="submit">SAVE!!!</button>
+        </div>
+    </form>
+    <p><a href="{% url 'board' %}">back</a></p>
+{% endblock %}
+
