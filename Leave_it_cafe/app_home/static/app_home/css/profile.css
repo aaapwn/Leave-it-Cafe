@@ -51,7 +51,7 @@ html, body {
 }
 
 .button {
-    position: fixed;
+    position: sticky;
     float: right;
     margin-top: 16px;
     margin-right: 16px;
