@@ -9,11 +9,17 @@ from django.urls import reverse
 @login_required
 def cafe(request):
     user = request.user
-    username = Profile.objects.get(user=user).displayname
+    try:
+        username = Profile.objects.get(user=user).displayname
+    except:
+        username = "Unknown"
     return render(request, 'app_cafe/cafe.html', context={'displayname':username})
 
 def send(request):
-    displayname = request.POST['displayname']
+    try:
+        displayname = request.POST['displayname']
+    except:
+        displayname = "Unknown"
     message = request.POST['message']
     print(displayname)
     new_message = Message.objects.create(text=message, displayname=displayname)

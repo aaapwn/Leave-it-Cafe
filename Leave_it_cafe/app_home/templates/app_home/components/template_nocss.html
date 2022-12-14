@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app_home/css/normalize.css' %}">
+    {% block css %}{% endblock %}
+    <title>{% block title %} {% endblock %}Leave-it-Cafe</title>
+</head>
+<body>
+    <div class="button">
+        <a href="{% url 'home' %}">
+        <img src="{% static 'app_home/image/homebut1.PNG' %}" class="backb">
+        <img src="{% static 'app_home/image/homebut2.PNG' %}" class="frontb">
+        </a>
+    </div>
+    {% block content %} {% endblock %}
+</body>
+</html>

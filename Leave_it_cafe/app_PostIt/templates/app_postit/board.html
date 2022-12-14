@@ -1,35 +1,48 @@
 {% extends 'app_postit/components/template.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app_postit/css/postit.css' %}">
+{% endblock %}
 
 {% block title %}Board | {% endblock %}
 
 {% block content %}
-<h1>board</h1>
-<div><a href="{% url 'writepost' %}">Writepost</a></div>
-<a href="{% url 'cafe' %}">Café</a>
-<a href="{% url 'home' %}">Home</a>
-    {% for post in all_post %}
-    <p>--------------------</p>
-    <div><a href="{% url 'postit' post.id %}">
-        {% if post.from_someone %}
-            <p>From : {{ post.from_someone }}</p>
-        {% endif %}
-        
-        {% if post.to_someone %}
-            <p>To : {{ post.to_someone }}</p>
-        {% endif %}
-
-        {% if not post.from_someone and not post.to_someone %}
-            <p>message : {{ post.message }}</p>
-        {% endif %}
-
-        {% if post.from_someone and not post.to_someone %}
-            <p>message : {{ post.message }}</p>
-        {% endif %}
-
-        {% if not post.from_someone and post.to_someone %}
-            <p>message : {{ post.message }}</p>
-        {% endif %}
-    </a></div>
-    {% endfor %}
+<div class="center overflow">
+            {% for post in all_post %}
+            <div class="postit"><a href="{% url 'postit' post.id %}">
+                <img src="{% static 'app_PostIt/image/postit/6.PNG' %}" width="200px">
+                <div class="text">
+                    {% if post.from_someone %}
+                        <p>From : {{ post.from_someone }}</p>
+                    {% endif %}
+                    
+                    {% if post.to_someone %}
+                        <p>To : {{ post.to_someone }}</p>
+                    {% endif %}
+            
+                    {% if not post.from_someone and not post.to_someone %}
+                        <p>message : {{ post.message }}</p>
+                    {% endif %}
+            
+                    {% if post.from_someone and not post.to_someone %}
+                        <p>message : {{ post.message }}</p>
+                    {% endif %}
+            
+                    {% if not post.from_someone and post.to_someone %}
+                        <p>message : {{ post.message }}</p>
+                    {% endif %}
+                </div>
+            </a></div>
+            {% endfor %}
+</div>
+<div class="center">
+    <img src="{% static 'app_PostIt/image/board/board.PNG' %}" class="bg">
+</div>
+<div class="buttonposs">
+    <a href="{% url 'writepost' %}">
+    <img src="{% static 'app_PostIt/image/board/button.PNG' %}" class="stylebutton">
+    </a>
+</div>
 {% endblock %}
 

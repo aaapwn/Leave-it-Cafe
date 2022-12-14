@@ -1,33 +1,54 @@
-{% extends 'app_home/components/template.html' %}
+{% extends 'app_home/components/template_nocss.html' %}
 {% load static %}
+{% load widget_tweaks %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'app_home/css/profile.css' %}">
+{% endblock %}
 
 {% block title %}Profile | {% endblock %}
 
 {% block content %}
-    <h3>profile</h3>
-    <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
-    <div>
-        <img src="{% static 'app_home/image/profile_image.jfif' %}" style="max-width: 200px;">
+<div class="container fullpage">
+    <div class="content-container">
+        <div class="meow">
+            <img class="meowpic" src="{% static 'app_home/image/profile/meow.PNG' %}">
+        </div>
+        <div class="prodiv">
+            <h3 class="protext">Profile : {{ user.username }}</h3>
+        </div>
+        <form action="{% url 'profile' %}" method="post">
+            {% csrf_token %}
+            <div class="disdiv">
+                <img class="dispic" src="{% static 'app_home/image/profile/displayname.PNG' %}" alt="">
+            </div>
+            <div class="b1">
+                <img class="b1pic" src="{% static 'app_home/image/profile/blank.PNG' %}">
+            </div>
+            <div class="typeboxdiv">
+                {{ extend.displayname|add_class:'typebox' }}
+                {{ extend.displayname.errors }}
+            </div>
+            <div class="maildiv">
+                <img class="mailpic" src="{% static 'app_home/image/profile/email.PNG' %}">
+            </div>
+            <div class="b2">
+                <img class="b2pic" src="{% static 'app_home/image/profile/blank.PNG' %}">
+            </div>
+            <div class="typeboxdiv2">
+                {{ form.email|add_class:'typebox' }}
+                {{ form.email.errors }}
+            </div>
+            <div class="changepass">
+                <a href="{% url 'password_change' %}"><img class="cppic" src="{% static 'app_home/image/profile/chagepass.PNG' %}"></a>
+            </div>
+            <div class="save">
+                <button type="submit" style="background: none; border: none; cursor: pointer;">
+                    <img class="savepic" src="{% static 'app_home/image/profile/save.PNG' %}">
+                </button>
+            </div>
+        </form>
     </div>
-    {% if flash_message %}
-        <p style="color: rgb(25, 206, 25);">{{ flash_message }}</p>
-    {% endif %}
-    <form action="{% url 'profile' %}" method="post">
-        {% csrf_token %}
-        <div style="margin-bottom: 16px;">
-            {{ extend.displayname.label_tag }}
-            {{ extend.displayname }}
-            {{ extend.displayname.errors }}
-        </div>
-        <div style="margin-bottom: 16px;">
-            {{ form.email.label_tag }}
-            {{ form.email }}
-            {{ form.email.errors }}
-        </div>
-        <div>
-            <button type="submit">SAVE!!!</button>
-        </div>
-    </form>
-    <p><a href="{% url 'board' %}">back</a></p>
+</div>
 {% endblock %}
 

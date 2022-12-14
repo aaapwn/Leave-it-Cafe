@@ -1,13 +1,29 @@
 {% extends 'app_cafe/components/template.html' %}
+{% load static %}
 
 {% block content %}
-        <h1>Café</h1>
-    <a href="{% url 'board' %}">Board</a>
-    <a href="{% url 'home' %}">Home</a>
-    <div style="overflow-y: scroll; background-color: grey; height:400px;">
-        <div id="display"></div>
+    <div class="container fullpage">
+        <div class="content-container">
+            <div class="grid">
+                <div><img class="image logo" src="{% static 'app_cafe/image/LOGO.PNG' %}" alt=""></div>
+                <div></div>
+                <div>
+                    <img class="image typing" src="{% static 'app_cafe/image/livetyping.PNG' %}" alt="">
+                    <div class="outbox" id="Middle">
+                        <div id="display"></div>
+                    </div>
+                    <div class="typeboxdiv">
+                        <form id="post-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="displayname" id="displayname" value="{{displayname}}">
+                            <input class="typebox" type="text" size="60" width="100" height="100" placeholder="Type here..." id="message" autocomplete="off">
+                            <input type="submit" value="SEND!!!" class="buttons">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-<div style="color: aqua;"></div>
     <script>
         $(document).ready(function(){
         
@@ -32,13 +48,6 @@
         })
     </script>
 
-    <form id="post-form">
-        {% csrf_token %}
-        <input type="hidden" name="displayname" id="displayname" value="{{displayname}}">
-        <input type="text" name="message" id="message">
-        <input type="submit" value="SEND!!!">
-    </form>
-
     <script>
         $(document).on('submit','#post-form',function(e){
             e.preventDefault();
@@ -57,5 +66,9 @@
             });
             document.getElementById('message').value = ''
             });
+    </script>
+    <script>
+        var div = document.getElementById("Middle");
+        div.scrollTop = div.scrollHeight;
     </script>
 {% endblock %}

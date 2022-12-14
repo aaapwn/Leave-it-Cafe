@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_PostIt.apps.AppPostitConfig',
     'app_cafe.apps.AppCafeConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

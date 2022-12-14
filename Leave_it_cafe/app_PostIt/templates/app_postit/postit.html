@@ -1,17 +1,28 @@
 {% extends 'app_postit/components/template.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'app_PostIt/css/post.css' %}">
+{% endblock %}
 
 {% block title %}TO : {{post.to_someone}} | {% endblock %}
 
 {% block content %}
-    {% if post.from_someone %}
-        <p>From : {{ post.from_someone }}</p>
-    {% endif %}
-
-    {% if post.to_someone %}
-        <p>To : {{ post.to_someone }}</p>
-    {% endif %}
-
-    <p>message : {{ post.message }}</p>
-    <p><a href="{% url 'board' %}">back</a></p>
+<div class="container">
+    <div class="pt">
+        <img class="pic" src="{% static 'app_PostIt/image/ptpic.PNG' %}">
+        <div class="aniki">
+            {% if post.from_someone %}
+                <p>From : {{ post.from_someone }}</p>
+            {% endif %}
+        
+            {% if post.to_someone %}
+                <p>To : {{ post.to_someone }}</p>
+            {% endif %}
+        
+            <p>message : {{ post.message }}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
 

@@ -1,0 +1,73 @@
+/* itim-regular - thai_latin */
+@font-face {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/itim-v10-thai_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/itim-v10-thai_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Global */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Itim', hardwriting;
+    background-color: #e3dbd9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.button {
+    position: sticky;
+    float: right;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.frontb, .backb {
+    width: 100px;
+}
+
+.button .frontb {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000000;
+}
+.button:hover .frontb {
+    display: inline;
+}
+
+.backb:hover{
+    stroke: bisque;
+    stroke-width: 20%;
+}
+
+.pt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pic{
+    width: 500px;
+}
+
+.aniki{
+    position: absolute;
+    margin-top: -410px;
+    margin-left: 50px;
+}
+
+.aniki p {
+    font-size: 25px;
+}

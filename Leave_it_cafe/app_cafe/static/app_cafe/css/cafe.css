@@ -1,0 +1,171 @@
+/* itim-regular - thai_latin */
+@font-face {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/itim-v10-thai_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/itim-v10-thai_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+
+/* Global */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Itim', hardwriting;
+    background-image: url('../image/Incafe\ bg\ fixed.png');
+    background-size:contain;
+}
+
+/* header */
+.button {
+    position: sticky;
+    float: right;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.frontb, .backb {
+    width: 100px;
+}
+
+.button .frontb {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.button:hover .frontb {
+    display: inline;
+}
+
+.backb:hover{
+    stroke: bisque;
+    stroke-width: 20%;
+}
+
+.header {
+    position: absolute;
+    margin: 16px;
+}
+
+.bg-header {
+    background-image: url("../image/bg_login.PNG");
+    background-size: 185px;
+    width: 185px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-header a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+/* content */
+
+.container {
+    /* border-style: solid;
+    border-color: black; */
+    padding: 0% 16px;
+}
+
+.fullpage {
+    min-height: 95vh;
+}
+
+.content-container {
+    margin-top: 20px;
+    /* border-style: solid;
+    border-color: blue; */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 600px;
+    row-gap: 16px;
+}
+
+.image {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    margin-top: 30px;
+    max-width: 600px;
+}
+
+.typing {
+    max-width: 720px;
+}
+
+.typeboxdiv{
+    margin-top: 20px;
+    /* margin-left: 1020px; */
+    position: absolute;
+}
+
+.typebox{
+    position: absolute;
+    background-color: transparent;
+    border:0 solid;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 25px;
+    margin-top: -17.5vh;
+    margin-left: 175px;
+    text-align: left;
+    width:300px;
+    border-radius:15px;
+    /* box-shadow:8px 8px 20px rgba(0,0,0,0.06); */
+    height: 80px;
+}
+
+.outbox{
+    position: absolute;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    /* background-color: rgba(239, 154, 154, 0); */
+    float: right;
+    margin-top: -65vh;
+    margin-left: 175px;
+    width: 490px;
+    height: 425px;
+    font-size: 25px;
+    display: flex;
+}
+
+.buttons {
+    display: none;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

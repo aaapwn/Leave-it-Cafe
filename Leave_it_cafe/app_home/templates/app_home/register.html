@@ -1,34 +1,54 @@
-{% extends 'app_home/components/template.html' %}
+{% extends 'app_home/components/template_nocss.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'app_home/css/register.css' %}">
+{% endblock %}
 
 {% block title %}Register | {% endblock %}
 
 {% block content %}
-    <form action="{% url 'register' %}" method="post">
-        {% csrf_token %}
-        <div style="margin-bottom: 16px;">
-            {{ form.username.label_tag }}
-            {{ form.username }}
-            {{ form.username.errors }}
+<div class="container fullpage">
+    <div class="content-container">
+        <div class="logo">
+            <img src="{% static 'app_home/image/register/logo.PNG' %}">
         </div>
-        <div style="margin-bottom: 16px;">
-            {{ form.email.label_tag }}
-            {{ form.email }}
-            {{ form.email.errors }}
-        </div>
-        <div style="margin-bottom: 16px;">
-            {{ form.password1.label_tag }}
-            {{ form.password1 }}
-            {{ form.password1.errors }}
-        </div>
-        <div style="margin-bottom: 16px;">
-            {{ form.password2.label_tag }}
-            {{ form.password2 }}
-            {{ form.password2.errors }}
-        </div>
-        <div>
-            <button type="submit">SEND!!!</button>
-        </div>
-    </form>
-    <p><a href="{% url 'board' %}">back</a></p>
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="b1">
+                <img class="b1pic" src="{% static 'app_home/image/register/blank.PNG' %}">
+            </div>
+            <div class="typeboxdiv">
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div class="b2">
+                <img class="b1pic" src="{% static 'app_home/image/register/blank.PNG' %}">
+            </div>
+            <div class="typeboxdiv2">
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            <div class="b3">
+                <img class="b1pic" src="{% static 'app_home/image/register/blank.PNG' %}">
+            </div>
+            <div class="typeboxdiv3">
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            <div class="b4">
+                <img class="b1pic" src="{% static 'app_home/image/register/blank.PNG' %}">
+            </div>
+            <div class="typeboxdiv4">
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            <div class="reg">
+                <button type="submit" style="background: none; border: none; cursor: pointer;">
+                    <img class="regpic" src="{% static 'app_home/image/register/register.PNG' %}">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
-

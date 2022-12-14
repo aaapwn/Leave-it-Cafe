@@ -1,8 +1,15 @@
-{% extends 'app_home/components/template.html' %}
+{% extends 'app_home/components/template_home.html' %}
+{% load static %}
 
 {% block title %}Where You GO | {% endblock %}
 
 {% block content %}
-    <a href="{% url 'board' %}">post-it</a>
-    <a href="{% url 'cafe' %}">CAFE</a>
+    <div class="container fullpage">
+        <div class="content-container">
+            <div class="grid">
+                <a href="{% url 'cafe' %}" class="linkto"><img src="{% static 'app_home/image/livechat.PNG' %}" class="image select-live"></a>
+                <a href="{% url 'board' %}" class="linkto"><img src="{% static 'app_home/image/board.PNG' %}" alt="" class="image select-board"></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

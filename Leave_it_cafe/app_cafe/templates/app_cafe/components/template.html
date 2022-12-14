@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'app_cafe/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'app_cafe/css/cafe.css' %}">
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <title>{% block title %} {% endblock %}Leave-it-Cafe</title>
 </head>
 <body>
+    <audio autoplay="" src="{% static 'app_cafe/song.mp3' %}" id="song"></audio>
+    <div class="button">
+        <a href="{% url 'home' %}">
+        <img src="{% static 'app_cafe/image/homebut1.PNG' %}" alt="Card Back" class="backb">
+        <img src="{% static 'app_cafe/image/homebut2.PNG' %}" class="frontb" alt="Card frontb">
+        </a>
+    </div>
     {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}">{{ user.username }}</a>
-        <a href="{% url 'logout' %}">logout</a>
+    <div class="header">
+        <div class="bg-header">
+            <a href="{% url 'profile' %}">{{ user.username }}</a>
+        </div>
+        <div class="bg-header">
+            <a href="{% url 'logout' %}">logout</a>
+        </div>
+    </div>
     {% else %}
-        <a href="{% url 'login' %}">login</a>
-        <a href="{% url 'register' %}">register</a>
+    <div class="header">
+        <div class="bg-header right">
+            <a href="{% url 'login' %}">login</a>
+        </div>
+    </div>
     {%  endif %}
+    <script>
+        var vid = document.getElementById("song");
+        vid.volume = 0.1;
+    </script>
     {% block content %} {% endblock %}
 </body>
 </html>

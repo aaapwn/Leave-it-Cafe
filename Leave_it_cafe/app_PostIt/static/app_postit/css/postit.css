@@ -1,0 +1,148 @@
+/* itim-regular - thai_latin */
+@font-face {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/itim-v10-thai_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/itim-v10-thai_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Global */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Itim', hardwriting;
+    background-color: #e3dbd9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: absolute;
+    margin: 16px;
+}
+
+.bg-header {
+    background-image: url("../image/bg_login.PNG");
+    background-size: 185px;
+    width: 185px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-header a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+
+.button {
+    position: sticky;
+    float: right;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.frontb, .backb {
+    width: 100px;
+}
+
+.button .frontb {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000000;
+}
+.button:hover .frontb {
+    display: inline;
+}
+
+.backb:hover{
+    stroke: bisque;
+    stroke-width: 20%;
+}
+
+.buttonposs{
+    position: absolute;
+    bottom: 30px;
+    right: 265px;
+}
+
+.stylebutton{
+    width: 130px;
+    
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg {
+    width: 1325px;
+}
+
+.overflow {
+    padding: 16px;
+    top: 43%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 1200px;
+    height: 550px;
+    /* border-style: solid;
+    border-color: black; */
+    overflow-y: scroll;
+    z-index: 100000;
+}
+
+.postit {
+    margin-left: 16px;
+    height: 200px;
+}
+
+.postit a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.text {
+    z-index: 10000;
+    max-width: 150px;
+    margin-top: -170px;
+    margin-left: 35px;
+}
+
+
+
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

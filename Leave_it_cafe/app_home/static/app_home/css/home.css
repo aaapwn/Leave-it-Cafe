@@ -1,0 +1,279 @@
+/* itim-regular - thai_latin */
+@font-face {
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/itim-v10-thai_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/itim-v10-thai_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Global */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Itim', hardwriting;
+    background-color: #e3dbd9;
+}
+
+/* header */
+.button {
+    position: sticky;
+    float: right;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.frontb, .backb {
+    width: 100px;
+}
+
+.button .frontb {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.button:hover .frontb {
+    display: inline;
+}
+
+.backb:hover{
+    stroke: bisque;
+    stroke-width: 20%;
+}
+
+.header {
+    position: absolute;
+    margin: 16px;
+}
+
+.bg-header {
+    background-image: url("../image/bg_login.PNG");
+    background-size: 185px;
+    width: 185px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-header a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.container {
+    /* border-style: solid;
+    border-color: black; */
+    padding: 0% 16px;
+}
+
+.fullpage {
+    min-height: 90vh;
+}
+
+.content-container {
+    margin-top: 20px;
+    /* border-style: solid;
+    border-color: blue; */
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Home */
+.fullpage-home {
+    min-height: 80vh;
+}
+
+.content-container-home {
+    margin-top: 160px;
+    /* border-style: solid;
+    border-color: blue; */
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo_image {
+    width: 1200px;
+}
+
+.button_image {
+    transition: transform .2s;
+}
+
+.enter-size {
+    max-width: 500px;
+}
+
+.button_enter :hover{
+    transform: scale(1.2);
+}
+
+/* choose-one */
+.grid {
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 16px;
+}
+
+.select-live {
+    display: block;
+    max-width: 85%;
+    transition: transform .2s;
+}
+
+.select-board {
+    display: block;
+    max-width: 75%;
+    transition: transform .2s;
+}
+
+.linkto :hover{
+    transform: scale(1.1);
+}
+
+/* change password */
+li {
+    font-size: 25px;
+}
+
+.headbox{
+    margin-left: 710px;
+    /* margin-right: auto; */
+    display: block;
+    width: 25%;
+    margin-top: 50px;
+}
+
+.beforpass{
+    position: relative;
+}
+
+.title{
+    width: 16%;
+    margin-top: 3%;
+    position: absolute;
+    margin-left: 25%;
+}
+
+.bank{
+    width: 35%;
+    margin-top: 2.2%;
+    position: absolute;
+    margin-left: 42%;
+}
+
+input{
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    max-width: 500px;
+    width: 500px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.textbox{
+    margin-top: 3.7%;
+    margin-left: 44%;
+    position: absolute;
+}
+
+.textbox input {
+    font-size: 25px;
+}
+
+.afterpass{
+    position: relative;
+
+}
+
+.title2{
+    width: 16%;
+    margin-top: 8%;
+    position: absolute;
+    margin-left: 25%;
+}
+
+.bank2{
+    width: 35%;
+    margin-top: 7.2%;
+    position: absolute;
+    margin-left: 42%;
+}
+
+.textbox2{
+    margin-top: 8.7%;
+    margin-left: 44%;
+    position: absolute;
+}
+
+.textbox2 input {
+    font-size: 25px;
+}
+
+.boxinf{
+    width: 50%;
+    margin-top: 14%;
+    position: absolute;
+    margin-left: 25%;
+}
+
+.confpass{
+    position: relative;
+}
+
+.title3{
+    width: 23%;
+    margin-top: 26%;
+    position: absolute;
+    margin-left: 19.5%;
+}
+
+.bank3{
+    width: 35%;
+    margin-top: 25.5%;
+    position: absolute;
+    margin-left: 42.5%;
+}
+
+.textbox3{
+    margin-top: 27%;
+    margin-left: 44.5%;
+    position: absolute;
+}
+
+.textbox3 input {
+    font-size: 25px;
+}
+
+/* change done */
+
+.content {
+    margin-top: 100px;
+}
+
+.done_size {
+    max-width: 400px;
+}
+
+
+

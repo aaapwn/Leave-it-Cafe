@@ -1,18 +1,45 @@
-{% extends 'app_home/components/template.html' %}
+{% extends 'app_home/components/template_nocss.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'app_home/css/login.css' %}">
+{% endblock %}
 
 {% block title %}เข้าสู่ระบบ | {% endblock %}
 
 {% block content %}
-    <h3>เข้าสู่ระบบ</h3>
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {{ form.errors }}
-        <p>
-            <button type="submit">login!!!</button>
-        </p>
-        {% if request.GET.next %}
-            <input type="hidden" name="next" value="{{ request.GET.next }}">
-        {% endif %}
-    </form>
+<div class="container fullpage">
+    <div class="content-container">
+        <div class="logo">
+            <img class="logopic" src="{% static 'app_home/image/login/logo.PNG' %}">
+        </div>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="user">
+                <img class="userpic" src="{% static 'app_home/image/login/username.PNG' %}">
+                <div class="typeboxdiv">
+                    {{ form.username|add_class:'typebox'|attr:'placeholder:Username' }}
+                    {{ form.username.errors }}
+                </div>
+            </div>
+            <div class="pass">
+                <img class="passpic" src="{% static 'app_home/image/login/password.PNG' %}">
+                <div class="typeboxdiv2">
+                    {{ form.password|add_class:'typebox2'|attr:'placeholder:Password' }}
+                    {{ form.password.errors }}
+                </div>
+            </div>
+            <div class="forget">
+                <h3 class="noacc">No account?</h3>
+                <a class="reg" href="{% url 'register' %}">Register</a>
+            </div>
+            <div class="login">
+                <button type="submit" style="background: none; border: none; cursor: pointer;">
+                    <img class="loginpic" src="{% static 'app_home/image/login/loginbutton.PNG' %}" alt="#">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
