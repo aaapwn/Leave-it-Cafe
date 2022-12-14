@@ -51,6 +51,29 @@ html, body {
     stroke-width: 20%;
 }
 
+.header {
+    position: absolute;
+    margin: 16px;
+}
+
+.bg-header {
+    background-image: url("../image/bg_login.PNG");
+    background-size: 185px;
+    width: 185px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-header a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
 .container{
     width: 100%;
     height: 85vh;

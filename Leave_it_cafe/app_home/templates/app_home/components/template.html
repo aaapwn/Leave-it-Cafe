@@ -17,22 +17,6 @@
         <img src="{% static 'app_home/image/homebut2.PNG' %}" class="frontb">
         </a>
     </div>
-    {% if user.is_authenticated %}
-    <div class="header">
-        <div class="bg-header">
-            <a href="{% url 'profile' %}">{{ user.username }}</a>
-        </div>
-        <div class="bg-header">
-            <a href="{% url 'logout' %}">logout</a>
-        </div>
-    </div>
-    {% else %}
-    <div class="header">
-        <div class="bg-header right">
-            <a href="{% url 'login' %}">login</a>
-        </div>
-    </div>
-    {%  endif %}
     {% block content %} {% endblock %}
 </body>
 </html>
